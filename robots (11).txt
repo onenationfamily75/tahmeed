@@ -1,0 +1,30 @@
+# robots.txt for Tahmeed Express
+# https://www.tahmeedexpress.com/
+
+User-agent: *
+Allow: /
+
+# Disallow admin or backend paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /checkout/
+Disallow: /booking/confirmation/
+Disallow: /user/account/
+Disallow: /payment/
+
+# Allow all major crawlers full access to public pages
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.tahmeedexpress.com/sitemap.xml

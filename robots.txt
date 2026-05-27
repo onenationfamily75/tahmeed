@@ -4,15 +4,6 @@
 User-agent: *
 Allow: /
 
-# Disallow admin or backend paths
-Disallow: /admin/
-Disallow: /api/
-Disallow: /private/
-Disallow: /checkout/
-Disallow: /booking/confirmation/
-Disallow: /user/account/
-Disallow: /payment/
-
 # Allow all major crawlers full access to public pages
 User-agent: Googlebot
 Allow: /

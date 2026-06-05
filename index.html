@@ -26,352 +26,135 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
+  body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
 
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 48px;
-    background: linear-gradient(to bottom, rgba(10,30,18,0.95), transparent);
-    backdrop-filter: blur(2px);
-    transition: background 0.3s;
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: linear-gradient(to bottom, rgba(10,30,18,0.95), transparent); backdrop-filter: blur(2px); transition: background 0.3s; }
   nav.scrolled { background: var(--green); box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem; font-weight: 700; color: var(--gold-light);
-    letter-spacing: 0.02em; text-decoration: none;
-    display: flex; align-items: center; gap: 10px;
-  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
   .nav-logo span { font-weight: 300; color: var(--white); }
   .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a {
-    color: rgba(255,255,255,0.85); text-decoration: none;
-    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em;
-    transition: color 0.2s;
-  }
+  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold-light); }
-  .btn-whatsapp-nav {
-    background: #25D366; color: var(--green) !important;
-    padding: 10px 20px; border-radius: 30px; font-weight: 600 !important;
-    transition: background 0.2s, transform 0.2s !important;
-  }
+  .btn-whatsapp-nav { background: #25D366; color: var(--green) !important; padding: 10px 20px; border-radius: 30px; font-weight: 600 !important; transition: background 0.2s, transform 0.2s !important; }
   .btn-whatsapp-nav:hover { background: #1ebe5b !important; transform: translateY(-1px); }
-  .btn-book-nav {
-    background: var(--gold); color: var(--green) !important;
-    padding: 10px 24px; border-radius: 30px; font-weight: 600 !important;
-    transition: background 0.2s, transform 0.2s !important;
-  }
+  .btn-book-nav { background: var(--gold); color: var(--green) !important; padding: 10px 24px; border-radius: 30px; font-weight: 600 !important; transition: background 0.2s, transform 0.2s !important; }
   .btn-book-nav:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
 
-  /* ─── HERO ─── */
-  .hero {
-    position: relative; min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    overflow: hidden;
-  }
+  /* HERO */
+  .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
   .hero-slides { position: absolute; inset: 0; }
-  .hero-slide {
-    position: absolute; inset: 0;
-    background-size: cover; background-position: center;
-    opacity: 0; transition: opacity 1.2s ease;
-  }
+  .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.2s ease; }
   .hero-slide.active { opacity: 1; }
-  .hero-slide::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(10,30,18,0.75) 0%, rgba(10,30,18,0.4) 60%, rgba(10,30,18,0.6) 100%);
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 140px 48px 60px;
-    max-width: 1300px; margin: 0 auto; width: 100%;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(201,151,58,0.2); border: 1px solid rgba(201,151,58,0.5);
-    color: var(--gold-light); padding: 6px 16px; border-radius: 30px;
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; margin-bottom: 20px;
-  }
+  .hero-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,18,0.75) 0%, rgba(10,30,18,0.4) 60%, rgba(10,30,18,0.6) 100%); }
+  .hero-content { position: relative; z-index: 2; padding: 140px 48px 60px; max-width: 1300px; margin: 0 auto; width: 100%; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,151,58,0.2); border: 1px solid rgba(201,151,58,0.5); color: var(--gold-light); padding: 6px 16px; border-radius: 30px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
   .hero-badge::before { content: '●'; font-size: 0.5rem; color: var(--gold); }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
-    color: var(--white); font-weight: 600; line-height: 1.1;
-    margin-bottom: 16px;
-  }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5.5rem); color: var(--white); font-weight: 600; line-height: 1.1; margin-bottom: 16px; }
   .hero h1 em { color: var(--gold-light); font-style: italic; }
-  .hero p {
-    color: rgba(255,255,255,0.75); font-size: 1.1rem;
-    max-width: 560px; line-height: 1.7; margin-bottom: 36px;
-  }
-  .slide-indicators {
-    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-    z-index: 2; display: flex; gap: 8px;
-  }
-  .slide-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: rgba(255,255,255,0.4); border: none; cursor: pointer;
-    transition: all 0.3s;
-  }
+  .hero p { color: rgba(255,255,255,0.75); font-size: 1.1rem; max-width: 560px; line-height: 1.7; margin-bottom: 36px; }
+  .slide-indicators { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; gap: 8px; }
+  .slide-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); border: none; cursor: pointer; transition: all 0.3s; }
   .slide-dot.active { background: var(--gold-light); transform: scale(1.4); }
 
-  /* ─── BOOKING WIDGET ─── */
-  .booking-widget {
-    background: rgba(255,255,255,0.97);
-    border-radius: var(--radius-lg);
-    padding: 28px 32px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
-    max-width: 900px;
-  }
-  .trip-toggle {
-    display: flex; gap: 0; margin-bottom: 24px;
-    background: var(--sand); border-radius: 30px; padding: 4px;
-    width: fit-content;
-  }
-  .trip-btn {
-    padding: 8px 24px; border-radius: 26px; border: none;
-    font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 600;
-    cursor: pointer; transition: all 0.25s; background: transparent;
-    color: var(--text-mid);
-  }
+  /* BOOKING WIDGET */
+  .booking-widget { background: rgba(255,255,255,0.97); border-radius: var(--radius-lg); padding: 28px 32px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); backdrop-filter: blur(10px); max-width: 900px; }
+  .trip-toggle { display: flex; gap: 0; margin-bottom: 24px; background: var(--sand); border-radius: 30px; padding: 4px; width: fit-content; }
+  .trip-btn { padding: 8px 24px; border-radius: 26px; border: none; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.25s; background: transparent; color: var(--text-mid); }
   .trip-btn.active { background: var(--green); color: var(--white); }
   .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .form-group { display: flex; flex-direction: column; gap: 6px; }
   .form-group.full { grid-column: 1/-1; }
-  .form-group label {
-    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--text-mid);
-  }
+  .form-group label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-mid); }
   .form-group label span { color: var(--terra); }
-  .form-control {
-    border: 2px solid var(--sand); border-radius: var(--radius);
-    padding: 12px 16px; font-family: 'Outfit', sans-serif;
-    font-size: 0.95rem; color: var(--text-dark); background: var(--cream);
-    transition: border 0.2s; outline: none; width: 100%;
-    appearance: none; -webkit-appearance: none;
-  }
+  .form-control { border: 2px solid var(--sand); border-radius: var(--radius); padding: 12px 16px; font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: var(--text-dark); background: var(--cream); transition: border 0.2s; outline: none; width: 100%; appearance: none; -webkit-appearance: none; }
   .form-control:focus { border-color: var(--green-light); background: #fff; }
-  .dates-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .dates-row.one-way { grid-template-columns: 1fr; }
   .return-date-group { display: none; }
   .return-date-group.show { display: block; }
-  .passengers-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .btn-search {
-    grid-column: 1/-1;
-    background: linear-gradient(135deg, var(--green), var(--green-light));
-    color: var(--white); border: none; border-radius: var(--radius);
-    padding: 16px 32px; font-family: 'Outfit', sans-serif;
-    font-size: 1rem; font-weight: 700; cursor: pointer;
-    letter-spacing: 0.04em; transition: all 0.25s;
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-  }
+  .btn-search { grid-column: 1/-1; background: linear-gradient(135deg, var(--green), var(--green-light)); color: var(--white); border: none; border-radius: var(--radius); padding: 16px 32px; font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; letter-spacing: 0.04em; transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 10px; }
   .btn-search:hover { background: linear-gradient(135deg, var(--green-light), var(--green)); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,45,31,0.3); }
 
-  /* ─── STATS BAR ─── */
-  .stats-bar {
-    background: var(--green);
-    padding: 24px 48px;
-    display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
-  }
+  /* STATS */
+  .stats-bar { background: var(--green); padding: 24px 48px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
   .stat { text-align: center; }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-weight: 700; color: var(--gold-light);
-    line-height: 1;
-  }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
   .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
 
-  /* ─── SECTION COMMON ─── */
+  /* SECTION */
   .section { padding: 80px 48px; max-width: 1300px; margin: 0 auto; }
-  .section-eyebrow {
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.15em; color: var(--terra);
-    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-  }
-  .section-eyebrow::before, .section-eyebrow::after {
-    content: ''; flex: 0 0 32px; height: 2px; background: var(--terra);
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 600; color: var(--green); line-height: 1.2;
-    margin-bottom: 12px;
-  }
+  .section-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--terra); display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .section-eyebrow::before, .section-eyebrow::after { content: ''; flex: 0 0 32px; height: 2px; background: var(--terra); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; color: var(--green); line-height: 1.2; margin-bottom: 12px; }
   .section-sub { color: var(--text-mid); font-size: 1rem; line-height: 1.7; max-width: 520px; }
 
-  /* ─── DESTINATIONS ─── */
-  .destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px; margin-top: 48px;
-  }
-  .dest-card {
-    position: relative; border-radius: var(--radius-lg);
-    overflow: hidden; cursor: pointer;
-    height: 280px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    transition: transform 0.35s, box-shadow 0.35s;
-  }
+  /* DESTINATIONS */
+  .destinations-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+  .dest-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; height: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); transition: transform 0.35s, box-shadow 0.35s; }
   .dest-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
   .dest-card:nth-child(3n+1) { grid-column: span 2; height: 360px; }
-  .dest-card img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.5s;
-  }
+  .dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
   .dest-card:hover img { transform: scale(1.06); }
-  .dest-card-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(10,30,18,0.85) 0%, transparent 55%);
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 24px;
-  }
-  .dest-country {
-    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.12em; color: var(--gold-light); margin-bottom: 4px;
-  }
-  .dest-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem; color: var(--white); font-weight: 600;
-  }
-  .dest-from {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-top: 8px;
-  }
-  .dest-price {
-    font-size: 0.85rem; color: rgba(255,255,255,0.8);
-  }
+  .dest-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,30,18,0.85) 0%, transparent 55%); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
+  .dest-country { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold-light); margin-bottom: 4px; }
+  .dest-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); font-weight: 600; }
+  .dest-from { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+  .dest-price { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
   .dest-price strong { color: var(--gold-light); font-size: 1rem; }
-  .dest-book-btn {
-    background: var(--gold); color: var(--green);
-    border: none; padding: 7px 18px; border-radius: 20px;
-    font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700;
-    cursor: pointer; transition: background 0.2s;
-  }
+  .dest-book-btn { background: var(--gold); color: var(--green); border: none; padding: 7px 18px; border-radius: 20px; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
   .dest-book-btn:hover { background: var(--gold-light); }
 
-  /* ─── FEATURES ─── */
-  .features-section {
-    background: var(--green);
-    padding: 80px 48px;
-  }
+  /* ─── ROUTES CARDS SECTION ─── */
+  .routes-cards-section { padding: 80px 48px; background: var(--sand); }
+  .routes-cards-inner { max-width: 1300px; margin: 0 auto; }
+  .routes-filter-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0 28px; }
+  .filter-tab { padding: 8px 22px; border-radius: 30px; border: 2px solid var(--sand); background: white; font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s; color: var(--text-mid); }
+  .filter-tab.active, .filter-tab:hover { background: var(--green); color: white; border-color: var(--green); }
+  .routes-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .route-card { background: white; border-radius: var(--radius-lg); padding: 22px 24px; border: 1px solid rgba(0,0,0,0.07); box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.25s, box-shadow 0.25s; cursor: pointer; display: flex; flex-direction: column; gap: 14px; }
+  .route-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+  .route-card-header { display: flex; align-items: center; justify-content: space-between; }
+  .route-country-badge { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 20px; }
+  .badge-kenya { background: rgba(0,100,0,0.1); color: #006400; }
+  .badge-uganda { background: rgba(255,165,0,0.15); color: #b36000; }
+  .badge-tanzania { background: rgba(0,91,165,0.1); color: #005ba5; }
+  .route-card-cities { display: flex; align-items: center; gap: 10px; }
+  .route-city { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--green); }
+  .route-arrow { color: var(--gold); font-size: 1rem; flex-shrink: 0; }
+  .route-card-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .route-meta-pill { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--text-mid); background: var(--cream); padding: 4px 10px; border-radius: 20px; }
+  .route-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--sand); }
+  .route-fare { font-family: 'Cormorant Garamond', serif; }
+  .route-fare .from-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-mid); display: block; }
+  .route-fare .fare-amount { font-size: 1.4rem; font-weight: 700; color: var(--green); line-height: 1; }
+  .route-fare .currency { font-size: 0.75rem; color: var(--text-mid); }
+  .btn-route-book { background: var(--green); color: white; border: none; padding: 9px 20px; border-radius: 20px; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .btn-route-book:hover { background: var(--green-light); }
+
+  /* FEATURES */
+  .features-section { background: var(--green); padding: 80px 48px; }
   .features-inner { max-width: 1300px; margin: 0 auto; }
-  .features-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 32px; margin-top: 48px;
-  }
-  .feature-card {
-    text-align: center; padding: 32px 24px;
-    background: rgba(255,255,255,0.06); border-radius: var(--radius-lg);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: background 0.3s;
-  }
+  .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+  .feature-card { text-align: center; padding: 32px 24px; background: rgba(255,255,255,0.06); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
   .feature-card:hover { background: rgba(255,255,255,0.1); }
-  .feature-icon {
-    width: 56px; height: 56px; background: rgba(201,151,58,0.2);
-    border-radius: 14px; display: flex; align-items: center; justify-content: center;
-    font-size: 1.6rem; margin: 0 auto 20px;
-  }
-  .feature-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--white); font-size: 1.3rem; font-weight: 600; margin-bottom: 10px;
-  }
+  .feature-icon { width: 56px; height: 56px; background: rgba(201,151,58,0.2); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 20px; }
+  .feature-card h3 { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
   .feature-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7; }
 
-  /* ─── ROUTES TABLE ─── */
-  .routes-section { padding: 80px 48px; background: var(--sand); }
-  .routes-inner { max-width: 1300px; margin: 0 auto; }
-  .routes-table {
-    width: 100%; border-collapse: separate; border-spacing: 0;
-    margin-top: 40px; background: white;
-    border-radius: var(--radius-lg); overflow: hidden;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
-  }
-  .routes-table th {
-    background: var(--green); color: var(--gold-light);
-    padding: 16px 20px; text-align: left;
-    font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-  }
-  .routes-table td {
-    padding: 14px 20px; border-bottom: 1px solid rgba(0,0,0,0.06);
-    font-size: 0.92rem; color: var(--text-dark);
-  }
-  .routes-table tr:last-child td { border-bottom: none; }
-  .routes-table tr:hover td { background: var(--cream); }
-  .badge-class {
-    display: inline-block; padding: 3px 12px; border-radius: 20px;
-    font-size: 0.72rem; font-weight: 700;
-  }
-  .badge-executive { background: rgba(201,151,58,0.15); color: var(--terra); }
-  .badge-vip { background: rgba(15,45,31,0.1); color: var(--green-light); }
-  .badge-standard { background: rgba(0,0,0,0.06); color: var(--text-mid); }
-  .btn-book-row {
-    background: var(--green); color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; font-family: 'Outfit', sans-serif;
-    font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
-  }
-  .btn-book-row:hover { background: var(--green-light); }
-
-  /* ─── MODAL OVERLAY ─── */
-  .modal-overlay {
-    position: fixed; inset: 0; z-index: 200;
-    background: var(--modal-bg);
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.3s;
-  }
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; z-index: 200; background: var(--modal-bg); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
   .modal-overlay.open { opacity: 1; pointer-events: all; }
-  .modal {
-    background: var(--cream); border-radius: var(--radius-lg);
-    width: 100%; max-width: 780px; max-height: 90vh;
-    overflow-y: auto; padding: 0;
-    transform: translateY(20px); transition: transform 0.3s;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-  }
+  .modal { background: var(--cream); border-radius: var(--radius-lg); width: 100%; max-width: 820px; max-height: 90vh; overflow-y: auto; padding: 0; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
   .modal-overlay.open .modal { transform: translateY(0); }
-  .modal-header {
-    background: var(--green); padding: 24px 32px;
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 10;
-  }
-  .modal-title {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--white); font-size: 1.5rem; font-weight: 600;
-  }
+  .modal-header { background: var(--green); padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .modal-title { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: 1.5rem; font-weight: 600; }
   .modal-route { color: var(--gold-light); font-size: 0.88rem; margin-top: 2px; }
-  .modal-close {
-    background: rgba(255,255,255,0.15); border: none; color: white;
-    width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s;
-  }
+  .modal-close { background: rgba(255,255,255,0.15); border: none; color: white; width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
   .modal-close:hover { background: rgba(255,255,255,0.3); }
-  .modal-steps {
-    display: flex; padding: 20px 32px 0;
-    gap: 0; border-bottom: 1px solid var(--sand);
-  }
-  .step-tab {
-    flex: 1; text-align: center; padding: 12px 0;
-    font-size: 0.82rem; font-weight: 600; color: var(--text-mid);
-    cursor: pointer; border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
+  .modal-steps { display: flex; padding: 20px 32px 0; gap: 0; border-bottom: 1px solid var(--sand); }
+  .step-tab { flex: 1; text-align: center; padding: 12px 0; font-size: 0.82rem; font-weight: 600; color: var(--text-mid); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .step-tab.active { color: var(--green); border-bottom-color: var(--green); }
   .step-tab.done { color: var(--green-light); }
-  .step-num {
-    width: 22px; height: 22px; border-radius: 50%; font-size: 0.72rem;
-    display: flex; align-items: center; justify-content: center; font-weight: 700;
-    background: var(--sand); color: var(--text-mid);
-  }
+  .step-num { width: 22px; height: 22px; border-radius: 50%; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; font-weight: 700; background: var(--sand); color: var(--text-mid); }
   .step-tab.active .step-num { background: var(--green); color: white; }
   .step-tab.done .step-num { background: var(--green-light); color: white; }
   .modal-body { padding: 32px; }
@@ -379,210 +162,123 @@
   .step-panel.active { display: block; }
 
   /* ─── SEAT MAP ─── */
-  .seat-map-wrap { position: relative; }
-  .bus-front {
-    background: var(--green); color: var(--gold-light);
-    text-align: center; padding: 10px; border-radius: 12px 12px 0 0;
-    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 0;
-  }
-  .bus-body {
-    background: white; border: 2px solid var(--sand);
-    border-radius: 0 0 12px 12px; padding: 20px 24px;
-  }
-  .seat-legend {
-    display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;
-  }
-  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-mid); }
-  .legend-box {
-    width: 24px; height: 24px; border-radius: 6px;
-  }
-  .legend-available { background: var(--sand); border: 2px solid #ccc; }
-  .legend-selected { background: var(--green); border: 2px solid var(--green-mid); }
-  .legend-occupied { background: #d9d9d9; border: 2px dashed #bbb; }
-  .legend-driver { background: var(--terra); border: 2px solid darkred; }
-  .seat-cols-header {
-    display: grid; grid-template-columns: 32px repeat(5, 1fr);
-    gap: 6px; margin-bottom: 6px;
-    text-align: center; font-size: 0.72rem; font-weight: 700;
-    color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.05em;
-  }
-  .seat-rows { display: flex; flex-direction: column; gap: 6px; }
-  .seat-row {
-    display: grid; grid-template-columns: 32px 1fr 1fr 28px 1fr 1fr;
-    gap: 6px; align-items: center;
-  }
-  .row-num {
-    font-size: 0.72rem; font-weight: 700; color: var(--text-mid);
-    text-align: center;
-  }
-  .aisle { width: 28px; }
-  .seat {
-    height: 36px; border-radius: 8px 8px 4px 4px;
-    border: 2px solid #ccc; background: var(--sand);
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 0.68rem; font-weight: 700; color: var(--text-mid);
-    transition: all 0.15s; position: relative;
-  }
-  .seat:hover:not(.occupied):not(.driver) { background: rgba(15,45,31,0.12); border-color: var(--green); }
-  .seat.selected { background: var(--green); border-color: var(--green-mid); color: white; }
-  .seat.occupied { background: #d9d9d9; border: 2px dashed #bbb; cursor: not-allowed; color: #aaa; }
-  .seat.driver { background: var(--terra); border-color: darkred; cursor: default; color: white; font-size: 0.6rem; }
-  .seat::before {
-    content: ''; position: absolute; top: -3px; left: 50%; transform: translateX(-50%);
-    width: 60%; height: 5px; background: inherit; border-radius: 3px 3px 0 0;
-    border: inherit;
-  }
-  .selected-info {
-    margin-top: 16px; padding: 12px 16px;
-    background: rgba(15,45,31,0.06); border-radius: var(--radius);
-    font-size: 0.88rem; color: var(--green);
-    min-height: 40px;
-  }
-  .selected-info strong { font-weight: 700; }
+  .seat-map-container { max-width: 520px; margin: 0 auto; }
+  .bus-top-bar { background: var(--green); color: var(--gold-light); text-align: center; padding: 10px; border-radius: 14px 14px 0 0; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .bus-chassis { background: white; border: 2px solid var(--sand); border-top: none; border-radius: 0 0 14px 14px; padding: 18px 24px 24px; }
+  .seat-legend { display: flex; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-mid); }
+  .legend-box { width: 22px; height: 22px; border-radius: 5px; }
+  .lb-avail { background: #d8eaf3; border: 2px solid #90c4dc; }
+  .lb-sel { background: var(--green); border: 2px solid var(--green-mid); }
+  .lb-sold { background: #d0d0d0; border: 2px dashed #aaa; }
+  .lb-window { background: #d8eaf3; border: 2px solid #90c4dc; position: relative; }
+  .lb-window::after { content: 'W'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; font-weight: 800; color: var(--green); }
 
-  /* ─── PASSENGER FORM ─── */
-  .passenger-section { margin-bottom: 28px; }
-  .passenger-section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-weight: 600; color: var(--green);
-    border-bottom: 2px solid var(--sand); padding-bottom: 10px; margin-bottom: 16px;
-    display: flex; align-items: center; gap: 10px;
+  /* The actual bus layout */
+  .bus-layout { display: flex; gap: 20px; }
+  .bus-col-left { display: flex; flex-direction: column; gap: 0; }
+  .bus-col-right { display: flex; flex-direction: column; gap: 0; margin-left: auto; }
+  .bus-aisle { flex: 1; }
+  /* Seat pairs */
+  .seat-pair { display: flex; gap: 5px; margin-bottom: 5px; align-items: center; }
+  .seat-label-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; padding: 0 2px; }
+  .col-label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; color: var(--text-mid); letter-spacing: 0.06em; width: 44px; text-align: center; }
+
+  /* Seat button */
+  .seat-btn {
+    width: 44px; height: 44px;
+    border-radius: 8px 8px 5px 5px;
+    border: 2px solid #90c4dc;
+    background: #d8eaf3;
+    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 0.62rem; font-weight: 700; color: #1a5a7a;
+    transition: all 0.15s;
+    position: relative;
+    font-family: 'Outfit', sans-serif;
   }
+  .seat-btn::before { content: ''; position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 55%; height: 5px; background: #90c4dc; border-radius: 3px 3px 0 0; }
+  .seat-btn.window-seat { background: #c8e0ef; }
+  .seat-btn.window-seat::after { content: 'W'; position: absolute; bottom: 2px; right: 3px; font-size: 0.5rem; font-weight: 900; color: var(--green); opacity: 0.7; }
+  .seat-btn:hover:not(.sold):not(.driver-seat) { background: rgba(15,45,31,0.15); border-color: var(--green); color: var(--green); }
+  .seat-btn.selected { background: var(--green) !important; border-color: var(--green-mid) !important; color: white !important; }
+  .seat-btn.selected::before { background: var(--green-mid); }
+  .seat-btn.sold { background: #d0d0d0; border: 2px dashed #aaa; cursor: not-allowed; color: #888; font-size: 0.58rem; }
+  .seat-btn.sold::before { background: #aaa; }
+  .seat-btn.driver-seat { background: var(--terra); border-color: #8b2500; color: white; cursor: default; font-size: 0.55rem; text-align: center; }
+  .seat-btn.driver-seat::before { background: #8b2500; }
+  .door-box { background: transparent; border: 2px dashed var(--terra); border-radius: 8px; width: 44px; padding: 6px 2px; display: flex; align-items: center; justify-content: center; color: var(--terra); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.08em; text-align: center; line-height: 1.3; }
+  .spacer-seat { width: 44px; height: 44px; }
+  .selected-info { margin-top: 14px; padding: 12px 16px; background: rgba(15,45,31,0.06); border-radius: var(--radius); font-size: 0.88rem; color: var(--green); min-height: 40px; }
+
+  /* PASSENGER FORMS */
+  .passenger-section { margin-bottom: 28px; }
+  .passenger-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--green); border-bottom: 2px solid var(--sand); padding-bottom: 10px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
   .passenger-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .p-group { display: flex; flex-direction: column; gap: 6px; }
   .p-group.full { grid-column: 1/-1; }
-  .p-group label {
-    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.08em; color: var(--text-mid);
-  }
-  .p-group input, .p-group select {
-    border: 2px solid var(--sand); border-radius: 8px;
-    padding: 11px 14px; font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem; color: var(--text-dark); background: white;
-    outline: none; transition: border 0.2s;
-    appearance: none;
-  }
+  .p-group label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-mid); }
+  .p-group input, .p-group select { border: 2px solid var(--sand); border-radius: 8px; padding: 11px 14px; font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: var(--text-dark); background: white; outline: none; transition: border 0.2s; appearance: none; }
   .p-group input:focus, .p-group select:focus { border-color: var(--green-light); }
 
-  /* ─── MODAL ACTIONS ─── */
-  .modal-actions {
-    display: flex; justify-content: flex-end; gap: 12px;
-    padding: 24px 32px; border-top: 1px solid var(--sand);
-    position: sticky; bottom: 0; background: var(--cream);
-  }
-  .btn-prev {
-    background: transparent; border: 2px solid var(--sand); color: var(--text-mid);
-    padding: 12px 28px; border-radius: var(--radius); font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
-  }
-  .btn-prev:hover { border-color: var(--green); color: var(--green); }
-  .btn-next {
-    background: var(--green); color: white; border: none;
-    padding: 12px 32px; border-radius: var(--radius); font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .btn-next:hover { background: var(--green-light); }
-
-  /* ─── CONFIRMATION ─── */
-  .confirm-card {
-    background: white; border-radius: var(--radius-lg);
-    padding: 28px; border: 1px solid var(--sand); margin-bottom: 20px;
-  }
-  .confirm-header {
-    display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
-    padding-bottom: 20px; border-bottom: 2px solid var(--sand);
-  }
-  .confirm-icon {
-    width: 60px; height: 60px; background: rgba(15,45,31,0.08);
-    border-radius: 16px; display: flex; align-items: center; justify-content: center;
-    font-size: 1.8rem;
-  }
+  /* CONFIRMATION */
+  .confirm-card { background: white; border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--sand); margin-bottom: 20px; }
+  .confirm-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 2px solid var(--sand); }
+  .confirm-icon { width: 60px; height: 60px; background: rgba(15,45,31,0.08); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
   .confirm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--green); font-weight: 600; }
   .confirm-sub { font-size: 0.85rem; color: var(--text-mid); margin-top: 2px; }
   .confirm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .confirm-item label {
-    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.1em; color: var(--text-mid); display: block; margin-bottom: 3px;
-  }
+  .confirm-item label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-mid); display: block; margin-bottom: 3px; }
   .confirm-item span { font-size: 0.95rem; font-weight: 600; color: var(--text-dark); }
-  .price-summary {
-    background: var(--green); color: white; border-radius: var(--radius-lg);
-    padding: 24px; margin-bottom: 20px;
-  }
-  .price-line {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;
-  }
+  .price-summary { background: var(--green); color: white; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 20px; }
+  .price-line { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
   .price-line:last-child { border: none; }
-  .price-line.total {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700;
-    color: var(--gold-light); padding-top: 16px;
-  }
+  .price-line.total { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); padding-top: 16px; }
   .price-line .lbl { color: rgba(255,255,255,0.75); }
   .price-line .val { font-weight: 600; }
-  .success-screen {
-    text-align: center; padding: 40px 20px;
-  }
-  .success-icon {
-    font-size: 4rem; margin-bottom: 20px; display: block;
-  }
-  .success-screen h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem; color: var(--green); font-weight: 600; margin-bottom: 10px;
-  }
+  .success-screen { text-align: center; padding: 40px 20px; }
+  .success-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .success-screen h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--green); font-weight: 600; margin-bottom: 10px; }
   .success-screen p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
-  .ticket-ref {
-    display: inline-block; background: var(--green); color: var(--gold-light);
-    padding: 12px 28px; border-radius: 30px;
-    font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700;
-    letter-spacing: 0.08em; margin: 20px 0;
-  }
+  .ticket-ref { display: inline-block; background: var(--green); color: var(--gold-light); padding: 12px 28px; border-radius: 30px; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.08em; margin: 20px 0; }
 
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--green); padding: 60px 48px 32px;
-    color: rgba(255,255,255,0.7);
-  }
+  /* MODAL ACTIONS */
+  .modal-actions { display: flex; justify-content: flex-end; gap: 12px; padding: 24px 32px; border-top: 1px solid var(--sand); position: sticky; bottom: 0; background: var(--cream); }
+  .btn-prev { background: transparent; border: 2px solid var(--sand); color: var(--text-mid); padding: 12px 28px; border-radius: var(--radius); font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+  .btn-prev:hover { border-color: var(--green); color: var(--green); }
+  .btn-next { background: var(--green); color: white; border: none; padding: 12px 32px; border-radius: var(--radius); font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .btn-next:hover { background: var(--green-light); }
+
+  /* FOOTER */
+  footer { background: var(--green); padding: 60px 48px 32px; color: rgba(255,255,255,0.7); }
   .footer-inner { max-width: 1300px; margin: 0 auto; }
-  .footer-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 48px; margin-bottom: 48px;
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem; color: var(--gold-light); font-weight: 700; margin-bottom: 16px;
-  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold-light); font-weight: 700; margin-bottom: 16px; }
   .footer-desc { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
-  .footer-col h4 {
-    color: white; font-size: 0.78rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
-  }
+  .footer-col h4 { color: white; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
   .footer-col a:hover { color: var(--gold-light); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 24px; display: flex; justify-content: space-between;
-    font-size: 0.8rem; align-items: center; flex-wrap: wrap; gap: 10px;
-  }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; font-size: 0.8rem; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer-bottom a { color: var(--gold); text-decoration: none; }
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .hero-content > * {
-    animation: fadeInUp 0.7s both;
-  }
+  /* ANIMATIONS */
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-content > * { animation: fadeInUp 0.7s both; }
   .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
   .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
   .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
   .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
 
-  /* ─── RESPONSIVE ─── */
+  /* FLOATING WA */
+  .whatsapp-float { position: fixed; bottom: 28px; right: 28px; z-index: 150; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,0.45); transition: transform 0.25s, box-shadow 0.25s; animation: waPulse 2.5s infinite; }
+  .whatsapp-float:hover { transform: scale(1.12); animation: none; }
+  .whatsapp-float .wa-tooltip { position: absolute; right: 70px; white-space: nowrap; background: var(--green); color: white; padding: 8px 14px; border-radius: 20px; font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+  .whatsapp-float .wa-tooltip::after { content: ''; position: absolute; left: 100%; top: 50%; transform: translateY(-50%); border: 6px solid transparent; border-left-color: var(--green); }
+  .whatsapp-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.12); } }
+
+  /* RESPONSIVE */
   @media (max-width: 1024px) {
     .destinations-grid { grid-template-columns: repeat(2, 1fr); }
     .dest-card:nth-child(3n+1) { grid-column: span 1; height: 280px; }
@@ -595,9 +291,8 @@
     .hero-content { padding: 100px 20px 40px; }
     .booking-widget { padding: 20px; }
     .booking-form { grid-template-columns: 1fr; }
-    .dates-row { grid-template-columns: 1fr; }
-    .passengers-row { grid-template-columns: 1fr; }
     .section { padding: 48px 20px; }
+    .routes-cards-section { padding: 48px 20px; }
     .destinations-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .features-grid { grid-template-columns: 1fr 1fr; }
     .stats-bar { padding: 20px; gap: 32px; }
@@ -607,37 +302,8 @@
     .confirm-grid { grid-template-columns: 1fr; }
     .modal-body { padding: 20px; }
     .modal-actions { padding: 16px 20px; }
-    .routes-section { padding: 48px 20px; }
     .features-section { padding: 48px 20px; }
-  }
-  /* ─── FLOATING WHATSAPP ─── */
-  .whatsapp-float {
-    position: fixed; bottom: 28px; right: 28px; z-index: 150;
-    width: 60px; height: 60px; background: #25D366;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 1.7rem; text-decoration: none;
-    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
-    transition: transform 0.25s, box-shadow 0.25s;
-    animation: waPulse 2.5s infinite;
-  }
-  .whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 10px 32px rgba(37,211,102,0.6); animation: none; }
-  .whatsapp-float .wa-tooltip {
-    position: absolute; right: 70px; white-space: nowrap;
-    background: var(--green); color: white; padding: 8px 14px;
-    border-radius: 20px; font-family: 'Outfit', sans-serif;
-    font-size: 0.82rem; font-weight: 600; opacity: 0;
-    pointer-events: none; transition: opacity 0.2s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  .whatsapp-float .wa-tooltip::after {
-    content: ''; position: absolute; left: 100%; top: 50%;
-    transform: translateY(-50%);
-    border: 6px solid transparent; border-left-color: var(--green);
-  }
-  .whatsapp-float:hover .wa-tooltip { opacity: 1; }
-  @keyframes waPulse {
-    0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
-    50% { box-shadow: 0 6px 32px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.12); }
+    .routes-cards-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -650,7 +316,7 @@
     <a href="#destinations">Destinations</a>
     <a href="#routes">Routes & Fares</a>
     <a href="#features">Amenities</a>
-    <a href="https://wa.me/245103761442" target="_blank" class="btn-whatsapp-nav">💬 WhatsApp Us</a>
+    <a href="https://wa.me/254756830011" target="_blank" class="btn-whatsapp-nav">💬 WhatsApp Us</a>
     <a href="#" class="btn-book-nav" onclick="openModal('Nairobi','Mombasa')">Book Now</a>
   </div>
 </nav>
@@ -668,8 +334,6 @@
     <div class="hero-badge">East Africa's No.1 Luxury Bus Service</div>
     <h1>Journey Across<br><em>East Africa</em> in Comfort</h1>
     <p>Nairobi to Mombasa, Kampala, Dar es Salaam and beyond. Reclining sleeper seats, free Wi-Fi, and 16+ years of trusted travel.</p>
-
-    <!-- BOOKING WIDGET -->
     <div class="booking-widget">
       <div class="trip-toggle">
         <button class="trip-btn active" id="btnOneWay" onclick="setTrip('one-way')">One Way</button>
@@ -681,18 +345,14 @@
           <select class="form-control" id="fromCity">
             <option value="">Select Departure City</option>
             <optgroup label="🇰🇪 Kenya">
-              <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option>
-              <option>Eldoret</option><option>Nakuru</option><option>Malaba</option>
-              <option>Kitale</option><option>Busia</option><option>Watamu</option>
-              <option>Voi</option><option>Kilifi</option><option>Webuye</option>
-              <option>Kericho</option><option>Malindi</option>
+              <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option><option>Eldoret</option>
+              <option>Nakuru</option><option>Malaba</option><option>Kitale</option><option>Busia</option>
+              <option>Watamu</option><option>Voi</option><option>Kilifi</option><option>Webuye</option>
+              <option>Kericho</option><option>Malindi</option><option>Mtwapa</option><option>Mumias</option>
+              <option>Kitui</option><option>Machakos</option>
             </optgroup>
-            <optgroup label="🇺🇬 Uganda">
-              <option>Kampala</option><option>Entebbe</option><option>Jinja</option><option>Mbale</option>
-            </optgroup>
-            <optgroup label="🇹🇿 Tanzania">
-              <option>Dar es Salaam</option><option>Arusha</option><option>Mwanza</option><option>Tanga</option>
-            </optgroup>
+            <optgroup label="🇺🇬 Uganda"><option>Kampala</option><option>Entebbe</option><option>Jinja</option><option>Mbale</option></optgroup>
+            <optgroup label="🇹🇿 Tanzania"><option>Dar es Salaam</option><option>Arusha</option><option>Moshi</option><option>Mwanza</option><option>Tanga</option></optgroup>
           </select>
         </div>
         <div class="form-group">
@@ -700,21 +360,17 @@
           <select class="form-control" id="toCity">
             <option value="">Select Destination City</option>
             <optgroup label="🇰🇪 Kenya">
-              <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option>
-              <option>Eldoret</option><option>Nakuru</option><option>Malaba</option>
-              <option>Kitale</option><option>Busia</option><option>Watamu</option>
-              <option>Voi</option><option>Kilifi</option><option>Webuye</option>
-              <option>Kericho</option><option>Malindi</option>
+              <option>Nairobi</option><option>Mombasa</option><option>Kisumu</option><option>Eldoret</option>
+              <option>Nakuru</option><option>Malaba</option><option>Kitale</option><option>Busia</option>
+              <option>Watamu</option><option>Voi</option><option>Kilifi</option><option>Webuye</option>
+              <option>Kericho</option><option>Malindi</option><option>Mtwapa</option><option>Mumias</option>
+              <option>Kitui</option><option>Machakos</option>
             </optgroup>
-            <optgroup label="🇺🇬 Uganda">
-              <option>Kampala</option><option>Entebbe</option><option>Jinja</option><option>Mbale</option>
-            </optgroup>
-            <optgroup label="🇹🇿 Tanzania">
-              <option>Dar es Salaam</option><option>Arusha</option><option>Mwanza</option><option>Tanga</option>
-            </optgroup>
+            <optgroup label="🇺🇬 Uganda"><option>Kampala</option><option>Entebbe</option><option>Jinja</option><option>Mbale</option></optgroup>
+            <optgroup label="🇹🇿 Tanzania"><option>Dar es Salaam</option><option>Arusha</option><option>Moshi</option><option>Mwanza</option><option>Tanga</option></optgroup>
           </select>
         </div>
-        <div class="form-group" id="departureDateGroup">
+        <div class="form-group">
           <label>Departure Date <span>*</span></label>
           <input type="date" class="form-control" id="departDate" min="">
         </div>
@@ -725,16 +381,10 @@
         <div class="form-group">
           <label>Passengers <span>*</span></label>
           <select class="form-control" id="numPassengers">
-            <option value="1">1 Passenger</option>
-            <option value="2">2 Passengers</option>
-            <option value="3">3 Passengers</option>
-            <option value="4">4 Passengers</option>
-            <option value="5">5 Passengers</option>
-            <option value="6">6 Passengers</option>
-            <option value="7">7 Passengers</option>
-            <option value="8">8 Passengers</option>
-            <option value="9">9 Passengers</option>
-            <option value="10">10 Passengers</option>
+            <option value="1">1 Passenger</option><option value="2">2 Passengers</option>
+            <option value="3">3 Passengers</option><option value="4">4 Passengers</option>
+            <option value="5">5 Passengers</option><option value="6">6 Passengers</option>
+            <option value="7">7 Passengers</option><option value="8">8 Passengers</option>
           </select>
         </div>
         <div class="form-group">
@@ -745,9 +395,7 @@
             <option value="standard">Standard</option>
           </select>
         </div>
-        <button class="btn-search" onclick="searchBus()">
-          <span>🔍</span> Search Available Buses
-        </button>
+        <button class="btn-search" onclick="searchBus()">🔍 Search Available Buses</button>
       </div>
     </div>
   </div>
@@ -758,7 +406,7 @@
 <div class="stats-bar">
   <div class="stat"><div class="stat-num">16+</div><div class="stat-label">Years of Service</div></div>
   <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Luxury Buses</div></div>
-  <div class="stat"><div class="stat-num">18</div><div class="stat-label">Destinations</div></div>
+  <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Destinations</div></div>
   <div class="stat"><div class="stat-num">100K+</div><div class="stat-label">Happy Travelers</div></div>
   <div class="stat"><div class="stat-num">3</div><div class="stat-label">Countries</div></div>
 </div>
@@ -773,77 +421,39 @@
   </div>
 </div>
 
+<!-- ROUTES CARDS -->
+<div class="routes-cards-section" id="routes">
+  <div class="routes-cards-inner">
+    <div class="section-eyebrow">All Routes</div>
+    <h2 class="section-title">Routes & Fares</h2>
+    <p class="section-sub">Browse all Tahmeed Express routes across Kenya, Uganda, and Tanzania. Click any card to book instantly.</p>
+    <div class="routes-filter-tabs">
+      <button class="filter-tab active" onclick="filterRoutes('all',this)">🌍 All Routes</button>
+      <button class="filter-tab" onclick="filterRoutes('kenya',this)">🇰🇪 Kenya</button>
+      <button class="filter-tab" onclick="filterRoutes('uganda',this)">🇺🇬 Uganda</button>
+      <button class="filter-tab" onclick="filterRoutes('tanzania',this)">🇹🇿 Tanzania</button>
+    </div>
+    <div class="routes-cards-grid" id="routeCardsGrid"></div>
+  </div>
+</div>
+
 <!-- FEATURES -->
 <div class="features-section" id="features">
   <div class="features-inner">
     <div style="text-align:center">
-      <div class="section-eyebrow" style="justify-content:center; color:var(--gold-light)">Why Travel With Us</div>
-      <h2 class="section-title" style="color:var(--white); text-align:center">Every Journey, a Luxury Experience</h2>
+      <div class="section-eyebrow" style="justify-content:center;color:var(--gold-light)">Why Travel With Us</div>
+      <h2 class="section-title" style="color:var(--white);text-align:center">Every Journey, a Luxury Experience</h2>
     </div>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🛌</div>
-        <h3>Sleeping Coaches</h3>
-        <p>East Africa's first luxury sleeping coach service — fully reclined seats for overnight journeys.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📶</div>
-        <h3>Free Wi-Fi</h3>
-        <p>Stay connected on every journey with high-speed internet access onboard all our buses.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">❄️</div>
-        <h3>Air Conditioning</h3>
-        <p>Climate-controlled comfort throughout your journey, regardless of outside conditions.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔌</div>
-        <h3>Power Outlets</h3>
-        <p>USB charging ports and power outlets at every seat — keep your devices charged on the go.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📺</div>
-        <h3>Entertainment</h3>
-        <p>Flat-screen TVs and DVD entertainment systems to keep you engaged throughout your trip.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>Secure Payment</h3>
-        <p>Book with M-Pesa, credit card, or online banking. Instant e-ticket confirmation via SMS.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📍</div>
-        <h3>GPS Tracking</h3>
-        <p>All buses equipped with real-time GPS so your loved ones can track your journey live.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🕐</div>
-        <h3>24/7 Support</h3>
-        <p>Our customer care team is always available via WhatsApp, phone, or in-person at any office.</p>
-      </div>
+      <div class="feature-card"><div class="feature-icon">🛌</div><h3>Sleeping Coaches</h3><p>East Africa's first luxury sleeping coach service — fully reclined seats for overnight journeys.</p></div>
+      <div class="feature-card"><div class="feature-icon">📶</div><h3>Free Wi-Fi</h3><p>Stay connected on every journey with high-speed internet access onboard all our buses.</p></div>
+      <div class="feature-card"><div class="feature-icon">❄️</div><h3>Air Conditioning</h3><p>Climate-controlled comfort throughout your journey, regardless of outside conditions.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔌</div><h3>Power Outlets</h3><p>USB charging ports and power outlets at every seat — keep your devices charged on the go.</p></div>
+      <div class="feature-card"><div class="feature-icon">📺</div><h3>Entertainment</h3><p>Flat-screen TVs and DVD entertainment systems to keep you engaged throughout your trip.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Secure Payment</h3><p>Book with M-Pesa, credit card, or online banking. Instant e-ticket confirmation via SMS.</p></div>
+      <div class="feature-card"><div class="feature-icon">📍</div><h3>GPS Tracking</h3><p>All buses equipped with real-time GPS so your loved ones can track your journey live.</p></div>
+      <div class="feature-card"><div class="feature-icon">🕐</div><h3>24/7 Support</h3><p>Our customer care team is always available via WhatsApp, phone, or in-person at any office.</p></div>
     </div>
-  </div>
-</div>
-
-<!-- ROUTES TABLE -->
-<div class="routes-section" id="routes">
-  <div class="routes-inner">
-    <div class="section-eyebrow">All Routes</div>
-    <h2 class="section-title">Routes & Fares</h2>
-    <p class="section-sub">Compare routes, durations, and fares across all Tahmeed Express services.</p>
-    <table class="routes-table">
-      <thead>
-        <tr>
-          <th>Route</th>
-          <th>Duration</th>
-          <th>Departures</th>
-          <th>Class</th>
-          <th>Fare from</th>
-          <th>Book</th>
-        </tr>
-      </thead>
-      <tbody id="routesTableBody"></tbody>
-    </table>
   </div>
 </div>
 
@@ -854,29 +464,31 @@
       <div>
         <div class="footer-logo">Tahmeed Express</div>
         <p class="footer-desc">East Africa's premier luxury bus service connecting Kenya, Uganda, and Tanzania since 2006. Safe, comfortable, and always on time.</p>
-        <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap">
-          <a href="tel:+245103761442" style="background:rgba(255,255,255,0.1);padding:8px 16px;border-radius:20px;color:white;text-decoration:none;font-size:0.8rem">📞 +245 103 761 442</a>
-          <a href="https://wa.me/245103761442" target="_blank" style="background:#25D366;padding:8px 16px;border-radius:20px;color:#0f2d1f;text-decoration:none;font-size:0.8rem;font-weight:700">💬 WhatsApp Us</a>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="tel:+254756830011" style="background:rgba(255,255,255,0.1);padding:8px 16px;border-radius:20px;color:white;text-decoration:none;font-size:0.8rem">📞 +254 756 830 011</a>
+          <a href="https://wa.me/254756830011" target="_blank" style="background:#25D366;padding:8px 16px;border-radius:20px;color:#0f2d1f;text-decoration:none;font-size:0.8rem;font-weight:700">💬 WhatsApp Us</a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Kenya Routes</h4>
         <ul>
-          <li><a href="#">Nairobi → Mombasa</a></li>
-          <li><a href="#">Nairobi → Kisumu</a></li>
-          <li><a href="#">Nairobi → Eldoret</a></li>
-          <li><a href="#">Mombasa → Malindi</a></li>
-          <li><a href="#">Nairobi → Nakuru</a></li>
+          <li><a href="#">Nairobi ↔ Mombasa</a></li>
+          <li><a href="#">Nairobi ↔ Kisumu</a></li>
+          <li><a href="#">Nairobi ↔ Eldoret</a></li>
+          <li><a href="#">Nairobi ↔ Nakuru</a></li>
+          <li><a href="#">Nairobi ↔ Malindi</a></li>
+          <li><a href="#">Nairobi ↔ Kilifi</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>International</h4>
         <ul>
-          <li><a href="#">Nairobi → Kampala</a></li>
-          <li><a href="#">Nairobi → Dar es Salaam</a></li>
-          <li><a href="#">Nairobi → Arusha</a></li>
-          <li><a href="#">Mombasa → Kampala</a></li>
-          <li><a href="#">Nairobi → Mwanza</a></li>
+          <li><a href="#">Nairobi ↔ Kampala</a></li>
+          <li><a href="#">Nairobi ↔ Dar es Salaam</a></li>
+          <li><a href="#">Nairobi ↔ Arusha</a></li>
+          <li><a href="#">Nairobi ↔ Moshi</a></li>
+          <li><a href="#">Mombasa ↔ Kampala</a></li>
+          <li><a href="#">Mombasa ↔ Dar es Salaam</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -912,39 +524,28 @@
       <div class="step-tab" id="tab2"><div class="step-num">2</div>Passenger Details</div>
       <div class="step-tab" id="tab3"><div class="step-num">3</div>Confirmation</div>
     </div>
-
-    <!-- STEP 1: SEATS -->
     <div class="modal-body">
+      <!-- STEP 1: SEAT MAP -->
       <div class="step-panel active" id="step1">
-        <div class="seat-map-wrap">
-          <div class="bus-front">🚌 Driver's Cabin — Front of Bus</div>
-          <div class="bus-body">
+        <div class="seat-map-container">
+          <div class="bus-top-bar">🚌 Tahmeed Express — 49 Seat Coach</div>
+          <div class="bus-chassis">
             <div class="seat-legend">
-              <div class="legend-item"><div class="legend-box legend-available"></div>Available</div>
-              <div class="legend-item"><div class="legend-box legend-selected"></div>Selected</div>
-              <div class="legend-item"><div class="legend-box legend-occupied"></div>Occupied</div>
-              <div class="legend-item"><div class="legend-box legend-driver"></div>Driver</div>
+              <div class="legend-item"><div class="legend-box lb-avail"></div>Available</div>
+              <div class="legend-item"><div class="legend-box lb-sel"></div>Selected</div>
+              <div class="legend-item"><div class="legend-box lb-sold"></div>Sold</div>
+              <div class="legend-item"><div class="legend-box lb-window"></div>Window</div>
             </div>
-            <div class="seat-cols-header">
-              <div></div>
-              <div>A</div><div>B</div>
-              <div></div>
-              <div>C</div><div>D</div>
-            </div>
-            <div class="seat-rows" id="seatGrid"></div>
+            <div id="seatMapLayout"></div>
           </div>
         </div>
-        <div class="selected-info" id="selectedInfo">
-          Select your seat(s) to continue. <strong id="selectedSeatsDisplay"></strong>
-        </div>
+        <div class="selected-info" id="selectedInfo">Select your seat(s) to continue.</div>
       </div>
-
-      <!-- STEP 2: PASSENGER -->
+      <!-- STEP 2 -->
       <div class="step-panel" id="step2">
         <div id="passengerFormsContainer"></div>
       </div>
-
-      <!-- STEP 3: CONFIRMATION -->
+      <!-- STEP 3 -->
       <div class="step-panel" id="step3">
         <div class="confirm-card">
           <div class="confirm-header">
@@ -967,88 +568,116 @@
         </div>
         <div class="price-summary" id="priceSummary"></div>
       </div>
-
-      <!-- SUCCESS -->
+      <!-- STEP 4: SUCCESS -->
       <div class="step-panel" id="step4">
         <div class="success-screen">
           <span class="success-icon">🎉</span>
           <h2>Booking Confirmed!</h2>
-          <p>Your Tahmeed Express booking has been received. Your full ticket details are being sent to our team on WhatsApp right now.</p>
+          <p>Your booking is confirmed. WhatsApp is opening now with your full ticket details.</p>
           <div class="ticket-ref" id="ticketRef">TE-000000</div>
-          <p style="margin-top:8px;margin-bottom:28px">Present this reference when boarding.<br>Arrive at the terminal 30–45 minutes before departure.</p>
-
-          <a id="waConfirmBtn" href="#" target="_blank" rel="noopener"
-            style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#0f2d1f;
-                   text-decoration:none;padding:14px 28px;border-radius:30px;font-family:'Outfit',sans-serif;
-                   font-size:1rem;font-weight:700;box-shadow:0 6px 20px rgba(37,211,102,0.4);
-                   transition:transform 0.2s,box-shadow 0.2s;margin-bottom:16px"
-            onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 28px rgba(37,211,102,0.55)'"
-            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(37,211,102,0.4)'">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Send Booking via WhatsApp
-          </a>
-
-          <br>
-          <button class="btn-prev" onclick="closeModal()" style="display:inline-block;margin-top:4px">Close & Book Another</button>
+          <p style="margin-top:8px;margin-bottom:28px">Present this reference when boarding.<br>Arrive at the terminal 30-45 minutes before departure.</p>
+          <p style="color:#2d7a4f;font-size:0.88rem;margin-bottom:24px">Opening WhatsApp automatically...</p>
+          <button class="btn-prev" onclick="closeModal()" style="display:inline-block;margin-top:4px">Close &amp; Book Another</button>
         </div>
       </div>
     </div>
-
     <div class="modal-actions" id="modalActions">
       <button class="btn-prev" id="btnPrev" onclick="prevStep()" style="display:none">← Back</button>
-      <a id="btnNext" href="#" onclick="handleNextStep(event)" class="btn-next" style="text-decoration:none">Continue → Select Seats</a>
+      <button id="btnNext" onclick="nextStep()" class="btn-next">Continue → Select Seats</button>
     </div>
   </div>
 </div>
 
+<a class="whatsapp-float" href="https://wa.me/254756830011?text=Hello%20Tahmeed%20Express!%20I'd%20like%20to%20book%20a%20ticket." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  💬<span class="wa-tooltip">Chat with us on WhatsApp</span>
+</a>
+
 <script>
-// ─── DATA ───
-const destinations = [
-  { name:'Nairobi', country:'Kenya', flag:'🇰🇪', price:'KES 1,400', img:'https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=800&q=80', desc:'Capital & hub of East Africa' },
-  { name:'Mombasa', country:'Kenya', flag:'🇰🇪', price:'KES 1,800', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', desc:'Coastal paradise on the Indian Ocean' },
-  { name:'Kampala', country:'Uganda', flag:'🇺🇬', price:'KES 3,500', img:'https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=800&q=80', desc:'The Pearl of Africa\'s vibrant capital' },
-  { name:'Dar es Salaam', country:'Tanzania', flag:'🇹🇿', price:'KES 4,000', img:'https://images.unsplash.com/photo-1568021735466-4f4ac3b9f8d4?w=800&q=80', desc:'Tanzania\'s bustling port city' },
-  { name:'Arusha', country:'Tanzania', flag:'🇹🇿', price:'KES 3,200', img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80', desc:'Gateway to Kilimanjaro & Serengeti' },
-  { name:'Kisumu', country:'Kenya', flag:'🇰🇪', price:'KES 1,400', img:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80', desc:'City of stars on Lake Victoria' },
-  { name:'Eldoret', country:'Kenya', flag:'🇰🇪', price:'KES 1,600', img:'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80', desc:'Home of East Africa\'s champion runners' },
-  { name:'Entebbe', country:'Uganda', flag:'🇺🇬', price:'KES 3,800', img:'https://images.unsplash.com/photo-1567861911437-538298e4232c?w=800&q=80', desc:'Lakeside city by Lake Victoria' },
+// ─── ROUTE DATA ───
+const allRoutes = [
+  // Kenya
+  { from:'Nairobi', to:'Mombasa', region:'kenya', duration:'8–10 hrs', times:'6:00, 8:00, 20:00, 21:00', cls:'executive', fare:1800, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Kisumu', region:'kenya', duration:'6–8 hrs', times:'7:00, 20:00, 21:30', cls:'vip', fare:1400, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Nakuru', region:'kenya', duration:'2–3 hrs', times:'7:00, 9:00, 14:00', cls:'standard', fare:1400, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Eldoret', region:'kenya', duration:'5–6 hrs', times:'6:30, 8:00, 21:00', cls:'vip', fare:1600, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Kitale', region:'kenya', duration:'6–7 hrs', times:'7:00, 20:00', cls:'standard', fare:1500, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Busia', region:'kenya', duration:'7–8 hrs', times:'7:00, 21:00', cls:'standard', fare:1800, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Malaba', region:'kenya', duration:'7–8 hrs', times:'7:00, 21:00', cls:'standard', fare:1800, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Mumias', region:'kenya', duration:'7–8 hrs', times:'7:00, 20:30', cls:'standard', fare:1600, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Webuye', region:'kenya', duration:'6–7 hrs', times:'7:00, 21:00', cls:'standard', fare:1700, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Kericho', region:'kenya', duration:'4–5 hrs', times:'7:30, 14:00', cls:'standard', fare:1500, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Kilifi', region:'kenya', duration:'9–11 hrs', times:'7:00, 21:00', cls:'vip', fare:1900, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Malindi', region:'kenya', duration:'10–11 hrs', times:'7:00, 21:00', cls:'vip', fare:2000, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Mtwapa', region:'kenya', duration:'9–10 hrs', times:'7:00, 21:00', cls:'vip', fare:1850, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Kitui', region:'kenya', duration:'3–4 hrs', times:'8:00, 14:00', cls:'standard', fare:1200, flag:'🇰🇪' },
+  { from:'Nairobi', to:'Machakos', region:'kenya', duration:'1–2 hrs', times:'8:00, 10:00, 14:00, 17:00', cls:'standard', fare:900, flag:'🇰🇪' },
+  // Uganda
+  { from:'Nairobi', to:'Kampala', region:'uganda', duration:'10–12 hrs', times:'6:00, 20:00', cls:'executive', fare:3500, flag:'🇺🇬' },
+  { from:'Mombasa', to:'Kampala', region:'uganda', duration:'18–20 hrs', times:'16:00, 20:00', cls:'executive', fare:5000, flag:'🇺🇬' },
+  { from:'Malaba', to:'Kampala', region:'uganda', duration:'2–3 hrs', times:'8:00, 12:00, 16:00', cls:'vip', fare:1200, flag:'🇺🇬' },
+  // Tanzania
+  { from:'Nairobi', to:'Arusha', region:'tanzania', duration:'5–6 hrs', times:'7:00, 16:45', cls:'vip', fare:3200, flag:'🇹🇿' },
+  { from:'Nairobi', to:'Moshi', region:'tanzania', duration:'6–7 hrs', times:'7:00, 16:00', cls:'vip', fare:3400, flag:'🇹🇿' },
+  { from:'Nairobi', to:'Dar es Salaam', region:'tanzania', duration:'14–16 hrs', times:'6:00, 20:30', cls:'executive', fare:4000, flag:'🇹🇿' },
+  { from:'Mombasa', to:'Dar es Salaam', region:'tanzania', duration:'10–12 hrs', times:'6:00, 20:00', cls:'executive', fare:3500, flag:'🇹🇿' },
+  { from:'Mombasa', to:'Tanga', region:'tanzania', duration:'4–5 hrs', times:'7:00, 13:00', cls:'vip', fare:2000, flag:'🇹🇿' },
+  { from:'Arusha', to:'Dar es Salaam', region:'tanzania', duration:'7–8 hrs', times:'6:00, 8:00, 14:00', cls:'vip', fare:2500, flag:'🇹🇿' },
+  { from:'Arusha', to:'Mombasa', region:'tanzania', duration:'6–7 hrs', times:'7:00 (selected)', cls:'vip', fare:2800, flag:'🇹🇿' },
 ];
 
-const routes = [
-  { from:'Nairobi', to:'Mombasa', duration:'8–10 hrs', times:'6:00, 8:00, 20:00, 21:00', cls:'executive', fare:'KES 1,800' },
-  { from:'Nairobi', to:'Kisumu', duration:'6–8 hrs', times:'7:00, 20:00, 21:30', cls:'vip', fare:'KES 1,400' },
-  { from:'Nairobi', to:'Eldoret', duration:'5–6 hrs', times:'6:30, 8:00, 21:00', cls:'vip', fare:'KES 1,600' },
-  { from:'Nairobi', to:'Nakuru', duration:'2–3 hrs', times:'7:00, 9:00, 14:00', cls:'standard', fare:'KES 1,400' },
-  { from:'Nairobi', to:'Kampala', duration:'10–12 hrs', times:'6:00, 20:00', cls:'executive', fare:'KES 3,500' },
-  { from:'Nairobi', to:'Dar es Salaam', duration:'14–16 hrs', times:'06:00, 20:30', cls:'executive', fare:'KES 4,000' },
-  { from:'Nairobi', to:'Arusha', duration:'5–6 hrs', times:'7:00, 16:45', cls:'vip', fare:'KES 3,200' },
-  { from:'Nairobi', to:'Malindi', duration:'10–11 hrs', times:'7:00, 21:00', cls:'vip', fare:'KES 2,000' },
-  { from:'Mombasa', to:'Kampala', duration:'18–20 hrs', times:'16:00, 20:00', cls:'executive', fare:'KES 5,000' },
-  { from:'Nairobi', to:'Mwanza', duration:'14–16 hrs', times:'06:00, 19:00', cls:'vip', fare:'KES 3,800' },
-  { from:'Nairobi', to:'Tanga', duration:'12–14 hrs', times:'20:00', cls:'vip', fare:'KES 3,200' },
-  { from:'Nairobi', to:'Kitale', duration:'6–7 hrs', times:'7:00, 20:00', cls:'standard', fare:'KES 1,500' },
-  { from:'Mombasa', to:'Nairobi', duration:'8–10 hrs', times:'6:00, 20:00, 21:30', cls:'executive', fare:'KES 1,800' },
-  { from:'Kisumu', to:'Nairobi', duration:'6–8 hrs', times:'6:30, 20:00', cls:'vip', fare:'KES 1,400' },
-];
+const routeFaresMap = {};
+allRoutes.forEach(r => {
+  routeFaresMap[`${r.from}-${r.to}`] = r.fare;
+  routeFaresMap[`${r.to}-${r.from}`] = r.fare;
+});
 
 const classFares = { executive: 1800, vip: 1600, standard: 1400 };
-const routeFares = {
-  'Nairobi-Mombasa': 1800, 'Mombasa-Nairobi': 1800,
-  'Nairobi-Kisumu': 1400, 'Kisumu-Nairobi': 1400,
-  'Nairobi-Eldoret': 1600, 'Nairobi-Nakuru': 1400,
-  'Nairobi-Kitale': 1500, 'Nairobi-Malindi': 2000,
-  'Nairobi-Webuye': 1700, 'Nairobi-Kericho': 1500,
-  'Nairobi-Busia': 1800, 'Nairobi-Malaba': 1800,
-  'Nairobi-Voi': 1600, 'Nairobi-Kilifi': 1900,
-  'Nairobi-Watamu': 2100, 'Mombasa-Malindi': 1400,
-  'Nairobi-Kampala': 3500, 'Kampala-Nairobi': 3500,
-  'Nairobi-Dar es Salaam': 4000, 'Nairobi-Arusha': 3200,
-  'Mombasa-Kampala': 5000, 'Nairobi-Mwanza': 3800,
-  'Nairobi-Tanga': 3200, 'Nairobi-Entebbe': 3800,
-};
+const regionLabels = { kenya: '🇰🇪 Kenya', uganda: '🇺🇬 Uganda', tanzania: '🇹🇿 Tanzania' };
+const regionBadge = { kenya: 'badge-kenya', uganda: 'badge-uganda', tanzania: 'badge-tanzania' };
+const classDuration = { executive: '8–10 hrs', vip: '6–8 hrs', standard: '4–6 hrs' };
 
-// Occupied seats (pre-set)
-const occupiedSeats = ['1A','1C','2B','3D','4A','4C','5B','6D','7A','7C','8B','9A','10D','11B','11C','12A'];
+// ─── SEAT LAYOUT (matching provided image) ───
+// Layout: 49 seats total
+// Left side (rows going down): pair of 2 seats each row
+// Rows: driver row, then numbered seats
+// Sold seats from image (greyed out):
+const soldSeats = new Set(['1L','1R','2L','2R','3L','3R','4L','4R','5L','5R','6L','6R',
+  '7L','7R','8L','8R','9L','9R','10L','11L','11R','12L','12R']);
+
+// Seat layout based on image:
+// Left block (2 cols): Window(W) + inner
+// Right block (2 cols): inner + Window(W)
+// Seat IDs and numbers as seen in image:
+// Row structure (from image top to bottom):
+// Row A: SOLD SOLD | [door] | SOLD SOLD
+// Row B: SOLD SOLD |        | SOLD SOLD
+// Row C: SOLD SOLD | DOOR   | SOLD SOLD  (door on left)
+// Row D: SOLD SOLD |        | SOLD SOLD
+// Row E: SOLD + 18 |        | 19 + SOLD
+// Row F: SOLD + 22 |        | 23 + SOLD
+// Row G: SOLD + 26 |        | 27 + 28W
+// Row H: W29 + 30  |        | 31 + 32W
+// Row I: W33 + 34  |        | 35 + 36W
+// Row J: W37 + 38  |        | 39 + 40W
+// Row K: W41 + 42  |        | 43 + 44W
+// Row L: W45 + 46  |   47   | 48 + 49W
+
+// We'll represent this as structured data
+const busRows = [
+  // { type, left:[{id,label,isWindow,sold}], right:[{id,label,isWindow,sold}], hasDoor, middleSeat }
+  { left:[{id:'r1a',label:'SOLD',sold:true},{id:'r1b',label:'SOLD',sold:true}], right:[{id:'r1c',label:'SOLD',sold:true},{id:'r1d',label:'SOLD',sold:true}], hasDoor:false },
+  { left:[{id:'r2a',label:'SOLD',sold:true},{id:'r2b',label:'SOLD',sold:true}], right:[{id:'r2c',label:'SOLD',sold:true},{id:'r2d',label:'SOLD',sold:true}], hasDoor:false },
+  { left:[{id:'door',label:'',isDoor:true},{id:'r3b',label:'SOLD',sold:true}], right:[{id:'r3c',label:'SOLD',sold:true},{id:'r3d',label:'SOLD',sold:true}], hasDoor:false },
+  { left:[{id:'r4a',label:'SOLD',sold:true},{id:'r4b',label:'SOLD',sold:true}], right:[{id:'r4c',label:'SOLD',sold:true},{id:'r4d',label:'SOLD',sold:true}], hasDoor:false },
+  { left:[{id:'r5a',label:'SOLD',sold:true},{id:'18',label:'18',sold:false}], right:[{id:'19',label:'19',sold:false},{id:'r5d',label:'SOLD',sold:true}], hasDoor:false },
+  { left:[{id:'r6a',label:'SOLD',sold:true},{id:'22',label:'22',sold:false}], right:[{id:'23',label:'23',sold:false},{id:'r6d',label:'SOLD',sold:true}], hasDoor:false },
+  { left:[{id:'r7a',label:'SOLD',sold:true},{id:'26',label:'26',sold:false}], right:[{id:'27',label:'27',sold:false},{id:'28W',label:'28W',sold:false,isWindow:true}], hasDoor:false },
+  { left:[{id:'W29',label:'W29',sold:false,isWindow:true},{id:'30',label:'30',sold:false}], right:[{id:'31',label:'31',sold:false},{id:'32W',label:'32W',sold:false,isWindow:true}], hasDoor:false },
+  { left:[{id:'W33',label:'W33',sold:false,isWindow:true},{id:'34',label:'34',sold:false}], right:[{id:'35',label:'35',sold:false},{id:'36W',label:'36W',sold:false,isWindow:true}], hasDoor:false },
+  { left:[{id:'W37',label:'W37',sold:false,isWindow:true},{id:'38',label:'38',sold:false}], right:[{id:'39',label:'39',sold:false},{id:'40W',label:'40W',sold:false,isWindow:true}], hasDoor:false },
+  { left:[{id:'W41',label:'W41',sold:false,isWindow:true},{id:'42',label:'42',sold:false}], right:[{id:'43',label:'43',sold:false},{id:'44W',label:'44W',sold:false,isWindow:true}], hasDoor:false },
+  { left:[{id:'W45',label:'W45',sold:false,isWindow:true},{id:'46',label:'46',sold:false}], right:[{id:'48',label:'48',sold:false},{id:'49W',label:'49W',sold:false,isWindow:true}], middleSeat:{id:'47',label:'47',sold:false}, hasDoor:false },
+];
 
 let selectedSeats = [];
 let currentStep = 1;
@@ -1062,13 +691,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('returnDate').min = today;
   document.getElementById('departDate').value = today;
   buildDestinations();
-  buildRoutesTable();
-  buildSeatMap();
+  buildRouteCards('all');
   buildSlideIndicators();
   startSlider();
 });
 
-// ─── HERO SLIDER ───
+// ─── SLIDER ───
 let slideIndex = 0;
 function buildSlideIndicators() {
   const slides = document.querySelectorAll('.hero-slide');
@@ -1089,21 +717,29 @@ function goSlide(n) {
   slides[slideIndex].classList.add('active');
   dots[slideIndex].classList.add('active');
 }
-function startSlider() {
-  setInterval(() => goSlide(slideIndex + 1), 5000);
-}
+function startSlider() { setInterval(() => goSlide(slideIndex + 1), 5000); }
 window.addEventListener('scroll', () => {
   document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
 });
 
 // ─── DESTINATIONS ───
+const destinations = [
+  { name:'Nairobi', country:'Kenya', flag:'🇰🇪', price:'KES 1,400', img:'https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=800&q=80' },
+  { name:'Mombasa', country:'Kenya', flag:'🇰🇪', price:'KES 1,800', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80' },
+  { name:'Kampala', country:'Uganda', flag:'🇺🇬', price:'KES 3,500', img:'https://images.unsplash.com/photo-1575986767340-5d17ae767ab0?w=800&q=80' },
+  { name:'Dar es Salaam', country:'Tanzania', flag:'🇹🇿', price:'KES 4,000', img:'https://images.unsplash.com/photo-1568021735466-4f4ac3b9f8d4?w=800&q=80' },
+  { name:'Arusha', country:'Tanzania', flag:'🇹🇿', price:'KES 3,200', img:'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80' },
+  { name:'Kisumu', country:'Kenya', flag:'🇰🇪', price:'KES 1,400', img:'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80' },
+  { name:'Eldoret', country:'Kenya', flag:'🇰🇪', price:'KES 1,600', img:'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80' },
+  { name:'Moshi', country:'Tanzania', flag:'🇹🇿', price:'KES 3,400', img:'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80' },
+];
+
 function buildDestinations() {
   const grid = document.getElementById('destinationsGrid');
   destinations.forEach(d => {
     const card = document.createElement('div');
     card.className = 'dest-card';
-    card.innerHTML = `
-      <img src="${d.img}" alt="${d.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80'">
+    card.innerHTML = `<img src="${d.img}" alt="${d.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80'">
       <div class="dest-card-overlay">
         <div class="dest-country">${d.flag} ${d.country}</div>
         <div class="dest-name">${d.name}</div>
@@ -1116,83 +752,169 @@ function buildDestinations() {
   });
 }
 
-// ─── ROUTES TABLE ───
-function buildRoutesTable() {
-  const tbody = document.getElementById('routesTableBody');
-  routes.forEach(r => {
-    const tr = document.createElement('tr');
-    const badgeClass = r.cls === 'executive' ? 'badge-executive' : r.cls === 'vip' ? 'badge-vip' : 'badge-standard';
+// ─── ROUTE CARDS ───
+function buildRouteCards(filter) {
+  const grid = document.getElementById('routeCardsGrid');
+  grid.innerHTML = '';
+  const filtered = filter === 'all' ? allRoutes : allRoutes.filter(r => r.region === filter);
+  filtered.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'route-card';
+    const badgeCls = regionBadge[r.region];
     const clsLabel = r.cls.charAt(0).toUpperCase() + r.cls.slice(1);
-    tr.innerHTML = `
-      <td><strong>${r.from}</strong> → ${r.to}</td>
-      <td>⏱ ${r.duration}</td>
-      <td style="font-size:0.82rem;color:var(--text-mid)">${r.times}</td>
-      <td><span class="badge-class ${badgeClass}">${clsLabel}</span></td>
-      <td><strong style="color:var(--green)">${r.fare}</strong></td>
-      <td><button class="btn-book-row" onclick="openModal('${r.from}','${r.to}')">Book</button></td>`;
-    tbody.appendChild(tr);
+    card.innerHTML = `
+      <div class="route-card-header">
+        <span class="route-country-badge ${badgeCls}">${regionLabels[r.region]}</span>
+        <span style="font-size:0.75rem;color:var(--text-mid);background:var(--cream);padding:3px 10px;border-radius:20px">${clsLabel}</span>
+      </div>
+      <div class="route-card-cities">
+        <span class="route-city">${r.from}</span>
+        <span class="route-arrow">↔</span>
+        <span class="route-city">${r.to}</span>
+      </div>
+      <div class="route-card-meta">
+        <span class="route-meta-pill">⏱ ${r.duration}</span>
+        <span class="route-meta-pill">🕐 ${r.times}</span>
+      </div>
+      <div class="route-card-footer">
+        <div class="route-fare">
+          <span class="from-label">From</span>
+          <span class="fare-amount">KES ${r.fare.toLocaleString()}</span>
+        </div>
+        <button class="btn-route-book" onclick="openModal('${r.from}','${r.to}')">Book Now</button>
+      </div>`;
+    grid.appendChild(card);
   });
+}
+
+function filterRoutes(region, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  buildRouteCards(region);
 }
 
 // ─── SEAT MAP ───
 function buildSeatMap() {
-  const grid = document.getElementById('seatGrid');
-  grid.innerHTML = '';
-  // Row 0: Driver + front row
-  const driverRow = document.createElement('div');
-  driverRow.className = 'seat-row';
-  driverRow.innerHTML = `<div class="row-num"></div>
-    <div class="seat driver" style="grid-column:span 2">🚗 DRIVER</div>
-    <div class="aisle"></div>
-    <div class="seat occupied">—</div>
-    <div class="seat occupied">—</div>`;
-  grid.appendChild(driverRow);
+  const container = document.getElementById('seatMapLayout');
+  container.innerHTML = '';
+  
+  // Overall layout wrapper
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'display:flex;gap:16px;align-items:flex-start;justify-content:center';
+  
+  // Left column
+  const leftCol = document.createElement('div');
+  leftCol.style.cssText = 'display:flex;flex-direction:column;gap:5px;';
+  
+  // Right column  
+  const rightCol = document.createElement('div');
+  rightCol.style.cssText = 'display:flex;flex-direction:column;gap:5px;';
+  
+  // Middle column (aisle + seat 47)
+  const midCol = document.createElement('div');
+  midCol.style.cssText = 'display:flex;flex-direction:column;gap:5px;align-items:center;width:54px;';
 
-  for (let r = 1; r <= 12; r++) {
-    const row = document.createElement('div');
-    row.className = 'seat-row';
-    const rowNum = document.createElement('div');
-    rowNum.className = 'row-num';
-    rowNum.textContent = r;
-    row.appendChild(rowNum);
-    ['A','B'].forEach(col => {
-      const seatId = `${r}${col}`;
-      const seat = document.createElement('div');
-      seat.className = 'seat' + (occupiedSeats.includes(seatId) ? ' occupied' : '');
-      seat.id = 'seat-' + seatId;
-      seat.textContent = seatId;
-      if (!occupiedSeats.includes(seatId)) {
-        seat.onclick = () => toggleSeat(seatId);
+  // Column headers
+  const leftHeader = document.createElement('div');
+  leftHeader.style.cssText = 'display:flex;gap:5px;margin-bottom:4px';
+  leftHeader.innerHTML = '<div style="width:44px;text-align:center;font-size:0.65rem;font-weight:800;color:var(--text-mid);text-transform:uppercase">WIN</div><div style="width:44px;text-align:center;font-size:0.65rem;font-weight:800;color:var(--text-mid);text-transform:uppercase">AISLE</div>';
+  leftCol.appendChild(leftHeader);
+
+  const rightHeader = document.createElement('div');
+  rightHeader.style.cssText = 'display:flex;gap:5px;margin-bottom:4px';
+  rightHeader.innerHTML = '<div style="width:44px;text-align:center;font-size:0.65rem;font-weight:800;color:var(--text-mid);text-transform:uppercase">AISLE</div><div style="width:44px;text-align:center;font-size:0.65rem;font-weight:800;color:var(--text-mid);text-transform:uppercase">WIN</div>';
+  rightCol.appendChild(rightHeader);
+
+  // Driver row
+  const driverDiv = document.createElement('div');
+  driverDiv.style.cssText = 'display:flex;gap:5px;margin-bottom:4px';
+  driverDiv.innerHTML = '<div style="width:93px"></div>';
+  leftCol.appendChild(driverDiv);
+
+  // Steering on right
+  const steerDiv = document.createElement('div');
+  steerDiv.style.cssText = 'display:flex;gap:5px;margin-bottom:4px;align-items:center;justify-content:flex-end';
+  steerDiv.innerHTML = '<div style="width:44px;height:44px;border-radius:50%;border:3px solid var(--green-light);display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:rgba(15,45,31,0.05)">🎡</div>';
+  rightCol.appendChild(steerDiv);
+
+  const midHeaderSpace = document.createElement('div');
+  midHeaderSpace.style.cssText = 'height:28px;';
+  midCol.appendChild(midHeaderSpace);
+
+  const midDriverSpace = document.createElement('div');
+  midDriverSpace.style.cssText = 'height:48px;';
+  midCol.appendChild(midDriverSpace);
+
+  // Build each row
+  busRows.forEach((rowDef, rowIdx) => {
+    const leftPair = document.createElement('div');
+    leftPair.style.cssText = 'display:flex;gap:5px;';
+    
+    const rightPair = document.createElement('div');
+    rightPair.style.cssText = 'display:flex;gap:5px;';
+
+    const midCell = document.createElement('div');
+    midCell.style.cssText = 'width:54px;display:flex;align-items:center;justify-content:center;';
+
+    // Left seats
+    rowDef.left.forEach(s => {
+      if (s.isDoor) {
+        const door = document.createElement('div');
+        door.className = 'door-box';
+        door.innerHTML = 'D<br>O<br>O<br>R';
+        leftPair.appendChild(door);
+      } else {
+        leftPair.appendChild(makeSeat(s));
       }
-      row.appendChild(seat);
     });
-    const aisle = document.createElement('div');
-    aisle.className = 'aisle';
-    row.appendChild(aisle);
-    ['C','D'].forEach(col => {
-      const seatId = `${r}${col}`;
-      const seat = document.createElement('div');
-      seat.className = 'seat' + (occupiedSeats.includes(seatId) ? ' occupied' : '');
-      seat.id = 'seat-' + seatId;
-      seat.textContent = seatId;
-      if (!occupiedSeats.includes(seatId)) {
-        seat.onclick = () => toggleSeat(seatId);
-      }
-      row.appendChild(seat);
+
+    // Right seats
+    rowDef.right.forEach(s => {
+      rightPair.appendChild(makeSeat(s));
     });
-    grid.appendChild(row);
+
+    // Middle seat (last row only: seat 47)
+    if (rowDef.middleSeat) {
+      midCell.appendChild(makeSeat(rowDef.middleSeat));
+    } else {
+      midCell.style.height = '44px';
+    }
+
+    leftCol.appendChild(leftPair);
+    rightCol.appendChild(rightPair);
+    midCol.appendChild(midCell);
+  });
+
+  wrap.appendChild(leftCol);
+  wrap.appendChild(midCol);
+  wrap.appendChild(rightCol);
+  container.appendChild(wrap);
+}
+
+function makeSeat(s) {
+  const btn = document.createElement('button');
+  btn.className = 'seat-btn';
+  if (s.sold) btn.classList.add('sold');
+  if (s.isWindow) btn.classList.add('window-seat');
+  btn.textContent = s.sold ? 'SOLD' : s.label;
+  btn.id = 'seat-' + s.id;
+  if (!s.sold) {
+    btn.onclick = () => toggleSeat(s.id);
+  } else {
+    btn.disabled = true;
   }
+  return btn;
 }
 
 function toggleSeat(seatId) {
-  const requiredSeats = parseInt(document.getElementById('numPassengers')?.value || bookingData.passengers || 1);
+  const reqSeats = bookingData.passengers || 1;
   const el = document.getElementById('seat-' + seatId);
+  if (!el || el.classList.contains('sold')) return;
   if (el.classList.contains('selected')) {
     el.classList.remove('selected');
     selectedSeats = selectedSeats.filter(s => s !== seatId);
   } else {
-    if (selectedSeats.length >= requiredSeats) {
-      // Deselect oldest
+    if (selectedSeats.length >= reqSeats) {
       const oldest = selectedSeats.shift();
       document.getElementById('seat-' + oldest)?.classList.remove('selected');
     }
@@ -1203,13 +925,12 @@ function toggleSeat(seatId) {
 }
 
 function updateSeatInfo() {
-  const req = parseInt(bookingData.passengers || 1);
-  const disp = document.getElementById('selectedSeatsDisplay');
+  const req = bookingData.passengers || 1;
   const info = document.getElementById('selectedInfo');
   if (selectedSeats.length === 0) {
     info.innerHTML = `Select <strong>${req}</strong> seat(s) to continue.`;
   } else {
-    info.innerHTML = `Selected: <strong>${selectedSeats.join(', ')}</strong> (${selectedSeats.length}/${req} seats chosen)`;
+    info.innerHTML = `Selected: <strong>${selectedSeats.join(', ')}</strong> &nbsp;(${selectedSeats.length}/${req} seats)`;
   }
 }
 
@@ -1221,35 +942,32 @@ function setTrip(type) {
   document.getElementById('returnDateGroup').classList.toggle('show', type==='round-trip');
 }
 
-// ─── SEARCH ───
+// ─── SEARCH / BOOK ───
 function searchBus() {
   const from = document.getElementById('fromCity').value;
-  const to = document.getElementById('toCity').value;
+  const to   = document.getElementById('toCity').value;
   const date = document.getElementById('departDate').value;
-  if (!from || !to) { alert('Please select departure and destination cities.'); return; }
-  if (from === to) { alert('Departure and destination cities must be different.'); return; }
-  if (!date) { alert('Please select a departure date.'); return; }
+  if (!from || !to) { alert('Please select your departure and destination cities.'); return; }
+  if (from === to)  { alert('Departure and destination must be different.'); return; }
+  if (!date)        { alert('Please select a departure date.'); return; }
   openModal(from, to);
 }
 
-function quickBook(dest) {
-  openModal('Nairobi', dest);
-}
+function quickBook(dest) { openModal('Nairobi', dest); }
 
 // ─── MODAL ───
 function openModal(from, to) {
+  const resolvedFrom = from || document.getElementById('fromCity').value || 'Nairobi';
+  const resolvedTo   = to   || document.getElementById('toCity').value   || 'Mombasa';
   bookingData = {
-    from: from || document.getElementById('fromCity').value || 'Nairobi',
-    to: to || document.getElementById('toCity').value || 'Mombasa',
-    date: document.getElementById('departDate').value,
-    returnDate: document.getElementById('returnDate').value,
-    passengers: parseInt(document.getElementById('numPassengers').value) || 1,
-    cls: document.getElementById('travelClass').value || 'executive',
-    tripType: tripType,
+    from: resolvedFrom,
+    to:   resolvedTo,
+    date:        document.getElementById('departDate').value,
+    returnDate:  document.getElementById('returnDate').value,
+    passengers:  parseInt(document.getElementById('numPassengers').value) || 1,
+    cls:         document.getElementById('travelClass').value || 'executive',
+    tripType:    tripType,
   };
-  if (!bookingData.from) bookingData.from = from;
-  if (!bookingData.to) bookingData.to = to;
-
   document.getElementById('modalRoute').textContent = `${bookingData.from} → ${bookingData.to}`;
   selectedSeats = [];
   buildSeatMap();
@@ -1268,11 +986,9 @@ document.getElementById('bookingModal').addEventListener('click', function(e) {
 
 function goToStep(n) {
   currentStep = n;
-  document.querySelectorAll('.step-panel').forEach((p,i) => {
-    p.classList.toggle('active', i === n-1);
-  });
-  document.querySelectorAll('.step-tab').forEach((t,i) => {
-    t.classList.remove('active','done');
+  document.querySelectorAll('.step-panel').forEach((p, i) => p.classList.toggle('active', i === n-1));
+  document.querySelectorAll('.step-tab').forEach((t, i) => {
+    t.classList.remove('active', 'done');
     if (i === n-1) t.classList.add('active');
     else if (i < n-1) t.classList.add('done');
   });
@@ -1288,21 +1004,10 @@ function goToStep(n) {
   if (n === 3) buildConfirmation();
 }
 
-function handleNextStep(e) {
-  e.preventDefault();
-  if (currentStep === 3) {
-    // On final step, confirmBooking opens WhatsApp directly within this click event
-    confirmBooking();
-  } else {
-    nextStep();
-  }
-}
-
 function nextStep() {
   if (currentStep === 1) {
-    const req = bookingData.passengers;
-    if (selectedSeats.length < req) {
-      alert(`Please select ${req} seat(s). You've selected ${selectedSeats.length}.`);
+    if (selectedSeats.length < bookingData.passengers) {
+      alert(`Please select ${bookingData.passengers} seat(s). You've selected ${selectedSeats.length}.`);
       return;
     }
     buildPassengerForms();
@@ -1315,9 +1020,7 @@ function nextStep() {
   }
 }
 
-function prevStep() {
-  if (currentStep > 1) goToStep(currentStep - 1);
-}
+function prevStep() { if (currentStep > 1) goToStep(currentStep - 1); }
 
 // ─── PASSENGER FORMS ───
 function buildPassengerForms() {
@@ -1327,27 +1030,13 @@ function buildPassengerForms() {
     const sec = document.createElement('div');
     sec.className = 'passenger-section';
     sec.innerHTML = `
-      <div class="passenger-section-title">
-        <span>🧍</span> Passenger ${i+1} ${i===0?'(Lead)':''} — Seat ${selectedSeats[i]||'?'}
-      </div>
+      <div class="passenger-section-title"><span>🧍</span> Passenger ${i+1} ${i===0?'(Lead)':''} — Seat ${selectedSeats[i]||'?'}</div>
       <div class="passenger-grid">
-        <div class="p-group">
-          <label>First Name *</label>
-          <input type="text" class="pax-firstname" placeholder="e.g. Amina" required>
-        </div>
-        <div class="p-group">
-          <label>Last Name *</label>
-          <input type="text" class="pax-lastname" placeholder="e.g. Oduya" required>
-        </div>
-        <div class="p-group">
-          <label>ID / Passport No *</label>
-          <input type="text" class="pax-id" placeholder="National ID or Passport" required>
-        </div>
-        <div class="p-group">
-          <label>Phone Number *</label>
-          <input type="tel" class="pax-phone" placeholder="+254 7XX XXX XXX" required>
-        </div>
-        ${i===0 ? `<div class="p-group full"><label>Email Address</label><input type="email" class="pax-email" placeholder="ticket@email.com"></div>` : ''}
+        <div class="p-group"><label>First Name *</label><input type="text" class="pax-firstname" placeholder="e.g. Amina" required></div>
+        <div class="p-group"><label>Last Name *</label><input type="text" class="pax-lastname" placeholder="e.g. Oduya" required></div>
+        <div class="p-group"><label>ID / Passport No *</label><input type="text" class="pax-id" placeholder="National ID or Passport" required></div>
+        <div class="p-group"><label>Phone Number *</label><input type="tel" class="pax-phone" placeholder="+254 7XX XXX XXX" required></div>
+        ${i===0 ? '<div class="p-group full"><label>Email Address</label><input type="email" class="pax-email" placeholder="ticket@email.com"></div>' : ''}
       </div>`;
     container.appendChild(sec);
   }
@@ -1357,8 +1046,7 @@ function validatePassengerForms() {
   const required = document.querySelectorAll('#step2 [required]');
   for (const el of required) {
     if (!el.value.trim()) {
-      el.focus();
-      el.style.borderColor = 'var(--terra)';
+      el.focus(); el.style.borderColor = 'var(--terra)';
       setTimeout(() => el.style.borderColor = '', 2000);
       alert('Please fill in all required fields.');
       return false;
@@ -1370,15 +1058,13 @@ function validatePassengerForms() {
 // ─── CONFIRMATION ───
 function buildConfirmation() {
   const key = `${bookingData.from}-${bookingData.to}`;
-  const seatFare = routeFares[key] || classFares[bookingData.cls] || 1400;
+  const seatFare = routeFaresMap[key] || classFares[bookingData.cls] || 1400;
   const pax = bookingData.passengers;
   const totalFare = seatFare * pax;
   const returnFare = bookingData.tripType === 'round-trip' ? totalFare : 0;
   const grandTotal = totalFare + returnFare;
-
   const firstName = document.querySelector('#step2 .pax-firstname')?.value || '—';
   const lastName = document.querySelector('#step2 .pax-lastname')?.value || '';
-
   document.getElementById('c-from').textContent = bookingData.from;
   document.getElementById('c-to').textContent = bookingData.to;
   document.getElementById('c-date').textContent = bookingData.date ? new Date(bookingData.date).toDateString() : '—';
@@ -1387,7 +1073,6 @@ function buildConfirmation() {
   document.getElementById('c-seats').textContent = selectedSeats.join(', ');
   document.getElementById('c-pax').textContent = pax + ' passenger(s)';
   document.getElementById('c-name').textContent = firstName + ' ' + lastName;
-
   document.getElementById('priceSummary').innerHTML = `
     <div class="price-line"><span class="lbl">Fare per seat</span><span class="val">KES ${seatFare.toLocaleString()}</span></div>
     <div class="price-line"><span class="lbl">Passengers × ${pax}</span><span class="val">KES ${totalFare.toLocaleString()}</span></div>
@@ -1400,61 +1085,61 @@ function confirmBooking() {
   document.getElementById('ticketRef').textContent = ref;
   document.querySelectorAll('.step-tab').forEach(t => { t.classList.remove('active'); t.classList.add('done'); });
 
-  // Build WhatsApp message with full booking details
   const firstName = document.querySelector('#step2 .pax-firstname')?.value || '';
   const lastName  = document.querySelector('#step2 .pax-lastname')?.value  || '';
   const phone     = document.querySelector('#step2 .pax-phone')?.value     || '';
   const idNum     = document.querySelector('#step2 .pax-id')?.value        || '';
+  const email     = document.querySelector('#step2 .pax-email')?.value     || '';
 
   const key = `${bookingData.from}-${bookingData.to}`;
-  const seatFare = routeFares[key] || classFares[bookingData.cls] || 1400;
-  const pax = bookingData.passengers;
+  const seatFare  = routeFaresMap[key] || classFares[bookingData.cls] || 1400;
+  const pax       = bookingData.passengers;
   const totalFare = seatFare * pax;
   const returnFare = bookingData.tripType === 'round-trip' ? totalFare : 0;
   const grandTotal = totalFare + returnFare;
-
-  const dateStr = bookingData.date ? new Date(bookingData.date).toDateString() : '—';
+  const dateStr   = bookingData.date ? new Date(bookingData.date).toDateString() : 'Not set';
+  const clsLabel  = bookingData.cls.charAt(0).toUpperCase() + bookingData.cls.slice(1);
   const tripLabel = bookingData.tripType === 'round-trip' ? 'Round Trip' : 'One Way';
-  const clsLabel = bookingData.cls.charAt(0).toUpperCase() + bookingData.cls.slice(1);
+  const returnLine = (bookingData.tripType === 'round-trip' && bookingData.returnDate)
+    ? '\nReturn Date: ' + new Date(bookingData.returnDate).toDateString()
+    : '';
+  const returnFareLine = returnFare ? '\nReturn Fare: KES ' + returnFare.toLocaleString() : '';
+  const emailLine = email ? '\nEmail: ' + email : '';
 
-  const msg =
-`🚌 *TAHMEED EXPRESS — BOOKING CONFIRMATION*
-━━━━━━━━━━━━━━━━━━━━
-🎫 *Ref:* ${ref}
-━━━━━━━━━━━━━━━━━━━━
-📍 *Route:* ${bookingData.from} → ${bookingData.to}
-🔄 *Trip Type:* ${tripLabel}
-📅 *Departure:* ${dateStr}${bookingData.tripType === 'round-trip' && bookingData.returnDate ? `\n🔙 *Return:* ${new Date(bookingData.returnDate).toDateString()}` : ''}
-💺 *Seats:* ${selectedSeats.join(', ')}
-👥 *Passengers:* ${pax}
-🎟️ *Class:* ${clsLabel}
-━━━━━━━━━━━━━━━━━━━━
-👤 *Lead Passenger:* ${firstName} ${lastName}
-📞 *Phone:* ${phone}
-🪪 *ID/Passport:* ${idNum}
-━━━━━━━━━━━━━━━━━━━━
-💰 *Fare per seat:* KES ${seatFare.toLocaleString()}
-💰 *Subtotal (×${pax}):* KES ${totalFare.toLocaleString()}${returnFare ? `\n💰 *Return Fare:* KES ${returnFare.toLocaleString()}` : ''}
-✅ *TOTAL:* KES ${grandTotal.toLocaleString()}
-━━━━━━━━━━━━━━━━━━━━
-⏰kindly share payment details
-Please arrive 30–45 mins before departure.
-Thank you for choosing Tahmeed Express! 🇰🇪`;
+  // Build clean plain-text message — no dashes, arrows or special chars that encode badly
+  const lines = [
+    'TAHMEED EXPRESS - BOOKING CONFIRMATION',
+    '',
+    'Ref: ' + ref,
+    'Route: ' + bookingData.from + ' to ' + bookingData.to,
+    'Trip Type: ' + tripLabel,
+    'Departure: ' + dateStr + returnLine,
+    'Seats: ' + selectedSeats.join(', '),
+    'Passengers: ' + pax,
+    'Class: ' + clsLabel,
+    '',
+    'PASSENGER DETAILS',
+    'Name: ' + firstName + ' ' + lastName,
+    'Phone: ' + phone,
+    'ID/Passport: ' + idNum + emailLine,
+    '',
+    'FARE BREAKDOWN',
+    'Fare per seat: KES ' + seatFare.toLocaleString(),
+    'Subtotal (' + pax + ' pax): KES ' + totalFare.toLocaleString() + returnFareLine,
+    'TOTAL: KES ' + grandTotal.toLocaleString(),
+    '',
+    'Please share payment details to confirm.',
+    'Arrive 30-45 mins before departure.',
+    'Thank you for choosing Tahmeed Express!'
+  ];
 
-  const waURL = `https://wa.me/254756830011?text=${encodeURIComponent(msg)}`;
-  document.getElementById('waConfirmBtn').href = waURL;
+  const msg = lines.join('\n');
+  const waURL = 'https://wa.me/254756830011?text=' + encodeURIComponent(msg);
 
   goToStep(4);
-
-  // Open WhatsApp synchronously within the user gesture so browsers don't block it
-  window.open(waURL, '_blank');
+  // Open WhatsApp directly — no intermediate link
+  window.location.href = waURL;
 }
 </script>
-<!-- FLOATING WHATSAPP BUTTON -->
-<a class="whatsapp-float" href="https://wa.me/254756830011?text=Hello%20Tahmeed%20Express!%20I'd%20like%20to%20book%20a%20ticket." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  💬
-  <span class="wa-tooltip">Chat with us on WhatsApp</span>
-</a>
-
 </body>
 </html>
